@@ -1,0 +1,5 @@
+shuf -n 5000 uk_IP2Location\ LITE\ IP\ Geolocation.csv | xargs -i ip addr add {} dev eth1
+shuf -n 5000 uk_IP2Location\ LITE\ IP\ Geolocation.csv > uk_IP2Location\ LITE\ IP\ Geolocation_subset.csv
+less uk_IP2Location\ LITE\ IP\ Geolocation_subset.csv
+xargs -i ip addr add {} dev eth1 < uk_IP2Location\ LITE\ IP\ Geolocation_subset.csv
+ifconfig

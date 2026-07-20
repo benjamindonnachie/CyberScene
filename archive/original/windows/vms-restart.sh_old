@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# If VMs crashed, restart and log in
+
+# Ensure core VMs are loaded:
+#echo Ensure core VMs are loaded:
+
+/usr/bin/vboxmanage list runningvms | /usr/bin/grep --quiet '"Windows Server 2022 Standard (Updated July 2023)"' || /usr/bin/VBoxManage startvm "Windows Server 2022 Standard (Updated July 2023)"
+/usr/bin/vboxmanage list runningvms | /usr/bin/grep --quiet '"kali-linux-2023.3-virtualbox-amd64-gateway"' || /usr/bin/VBoxManage startvm "kali-linux-2023.3-virtualbox-amd64-gateway"
+
+# Loop around remaining VMs in random order
+#echo Loop around remaining VMs in random order
+
+/usr/bin/shuf -i 1-5 | while read number; do
+
+	#echo $number
+	/usr/bin/vboxmanage list runningvms | /usr/bin/grep --quiet \"Win10-Ghosts-$number\"
+	if [ $? -eq 1 ]; then
+		# Win10-Ghosts-$number is not running
+		#echo Win10-Ghosts-$number is not running
+	    /usr/bin/VBoxManage startvm "Win10-Ghosts-$number"
+	  # --type=headless
+        fi
+
+	    # Random pause between 30s and 60s.
+	    #echo Random pause between 3 and 9 mins.
+	    /usr/bin/sleep $((180 + RANDOM % 360))
+
+	    if [ $number -eq 1 ] ; then
+              #echo login as admin 
+	      /usr/bin/VBoxManage controlvm Win10-Ghosts-$number setcredentials Administrator 'P@ssword123!' branchoffice
+	    else
+              #echo log in as random user
+	  	/usr/bin/VBoxManage controlvm Win10-Ghosts-$number setcredentials `/usr/bin/shuf -n 1 /run/media/benjamindonnachie/OWC-SSD/activeDirectory_user_pass_only.csv`
+	    fi
+done

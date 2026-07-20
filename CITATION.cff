@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use these simulation materials, please cite this repository."
+title: "Synthetic small-office and e-commerce simulation scripts"
+type: software
+authors:
+  - family-names: Donnachie
+    given-names: Benjamin
+license: CC-BY-NC-SA-4.0
+date-released: 2026-07-20

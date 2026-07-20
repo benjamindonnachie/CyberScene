@@ -1,0 +1,10 @@
+"Win10-Ghosts-1" {d9fc3b9c-51df-46ce-97a4-9e9ad6bbcde7}
+"Windows Server 2022 Standard (Updated July 2023)" {4972ce0b-cb0d-469e-bba6-d7c0240f839f}
+"kali-linux-2023.3-virtualbox-amd64-gateway" {3c8184ad-bb13-4792-8b68-87257c9ef39e}
+"Win10-Ghosts-3" {ad962400-ca2d-418f-b0a6-da311f2a7bfd}
+"Win10-Ghosts-4" {9ca6badd-3551-44f3-a07c-6e56f8906699}
+"Win10-Ghosts-2" {b5976f45-5b7a-4faa-8bb7-1d9f9bdeaa99}
+"Win10-Ghosts-5" {2cd8a379-176c-49e8-b282-f924e4343931}
+"Win10-Ghosts-0" {8bd43a47-447d-43f7-9fcd-d00b10e80be3}
+"kali-linux-2023.3-virtualbox-amd64-rdp-scan" {c0e725b4-d701-4b93-a138-a3eca9278939}
+"kali-linux-2023.3-virtualbox-amd64-rdp-attack" {0bfbd709-b7ad-4ce7-b3df-24789cf41582}

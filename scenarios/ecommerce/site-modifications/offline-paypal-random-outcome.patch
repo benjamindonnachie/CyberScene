@@ -1,0 +1,16 @@
+diff --git a/sales.php b/sales.php
+--- a/sales.php
++++ b/sales.php
+@@ -1,8 +1,10 @@
+ <?php
+ 	include 'includes/session.php';
+ 
+-	if(isset($_GET['pay'])){
+-		$payid = $_GET['pay'];
++	if (rand(0, 9) > 0) {
++		$payid = "PAYID-FAKE-XQWEDES".strval(rand());
++//	if(isset($_GET['pay'])){
++//		$payid = $_GET['pay'];
+ 		$date = date('Y-m-d');
+ 
+ 		$conn = $pdo->open();
